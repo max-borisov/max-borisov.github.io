@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[/Max Borisov | web developer/i]]></title>
   <link href="http://max-borisov.github.io/atom.xml" rel="self"/>
   <link href="http://max-borisov.github.io/"/>
-  <updated>2014-09-30T17:40:50+03:00</updated>
+  <updated>2014-10-02T14:33:41+03:00</updated>
   <id>http://max-borisov.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Max Borisov]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[I Recommend DeepCool N11 Notebook Cooler]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-10-02-i-recommend-deepcool-n11-notebook-cooler/"/>
+    <updated>2014-10-02T12:47:22+03:00</updated>
+    <id>http://max-borisov.github.io/blog/i-recommend-deepcool-n11-notebook-cooler</id>
+    <content type="html"><![CDATA[<p>Several months ago I have purchased a notebook cooler.</p>
+
+<p>It is a really cool stand for the laptop. It has no any wires, fans, etc. It is a firm, thin, metal thing. Very handy.</p>
+
+<p>I have only one wish - I could be a bit lighter.</p>
+
+<p>Here are some photos:</p>
+
+<p><img src="http://max-borisov.github.io/images/posts/notebook_cooler/IMG_6938.JPG" alt="side view" />
+<img src="http://max-borisov.github.io/images/posts/notebook_cooler/IMG_6937.JPG" alt="top view" />
+<img src="http://max-borisov.github.io/images/posts/notebook_cooler/IMG_6935.JPG" alt="side view with laptop" />
+<img src="http://max-borisov.github.io/images/posts/notebook_cooler/IMG_6934.JPG" alt="top view with laptop" /></p>
+]]></content>
+  </entry>
   
 </feed>
