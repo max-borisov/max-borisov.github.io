@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "I recommend DeepCool N11 Notebook Cooler"
+title: "Notebook cooler DeepCool N11"
 date: 2014-10-02 12:47:22 +0300
 comments: true
 categories: 
