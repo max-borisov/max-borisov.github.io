@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>/Max Borisov | web developer/i</title>
+  <title>Sass in Your Projects - /Max Borisov | web developer/i</title>
   <meta name="author" content="Max Borisov">
 
   
-  <meta name="description" content="Here is how you can set a default host: Go to /etc/apache2/sites-available.
-Find a default.conf file.
-Inside VirtualHost directive put the line &hellip;">
+  <meta name="description" content="The other day I have open for myself a Sass tool. I knew about it, but there was no a good reason to start using it. Until this time. I have a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Inside VirtualHost directive put the line &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://max-borisov.github.io">
+  <link rel="canonical" href="http://max-borisov.github.io/blog/2014-10-09-sass-in-your-projects">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="/Max Borisov | web developer/i" type="application/atom+xml">
@@ -77,59 +75,12 @@ Inside VirtualHost directive put the line &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014-10-16-default-host-for-apache-web-server/">Default Host for Apache Web Server on Ubuntu</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-10-16T09:14:44+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:14 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here is how you can set a default host:</p>
-
-<ol>
-<li>Go to <strong>/etc/apache2/sites-available</strong>.</li>
-<li>Find a <strong>default.conf</strong> file.</li>
-<li>Inside <strong>VirtualHost</strong> directive put the line <strong>DocumentRoot /var/www/yoursite.com</strong></li>
-<li>Restart apache - <strong>/etc/init.d/apache restart</strong></li>
-</ol>
-
-
-<p>Use IP address or yoursite.com domain to access your server.
-Code tested on <strong>Ubuntu 13.10</strong>.</p>
-
-<p>Here the <strong>conf</strong> file is located
-<img src="/images/posts/apache-default-host/img_2.png" alt="" />
-<img src="/images/posts/apache-default-host/img_1.png" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014-10-09-sass-in-your-projects/">Sass in Your Projects</a></h1>
+      <h1 class="entry-title">Sass in Your Projects</h1>
     
     
       <p class="meta">
@@ -145,7 +96,7 @@ Code tested on <strong>Ubuntu 13.10</strong>.</p>
   </header>
 
 
-  <div class="entry-content"><p>The other day I have open for myself a <a href="http://sass-lang.com/">Sass</a> tool. I knew about it, but there was no a good reason to start using it. Until this time.</p>
+<div class="entry-content"><p>The other day I have open for myself a <a href="http://sass-lang.com/">Sass</a> tool. I knew about it, but there was no a good reason to start using it. Until this time.</p>
 
 <p>I have a project where we use a bunch of css files. I don&rsquo;t spend much creating css code, I update and maintain it instead. It wasn`t a problem but I started to think how to make this process more friendly. And <a href="http://sass-lang.com/">Sass</a> appeared on the stage. It provides many features to make css development easier such as: <strong>variables</strong>, <strong>nesting</strong> and  <strong>partials</strong>.</p>
 
@@ -223,153 +174,48 @@ In configuration file <strong>main.php</strong> I put the following code:</p>
 
 <p></p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014-10-07-automatically-run-commands-after-ssh-login/">Automatically Run Commands After Ssh Login</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-10-07T20:28:40+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:28 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>On your Linux server put the code in ~/.bashrc or /etc/bash.bashrc to to run commands for all users:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>if [[ -n $SSH_CONNECTION ]] ; then
-</span><span class='line'>    echo "I'm logged in!"
-</span><span class='line'>    # put commands here 
-</span><span class='line'>fi</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
   
 
+<span class="byline author vcard">Posted by <span class="fn">Max Borisov</span></span>
 
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014-10-07-Remote-SSH-login-without-a-password-from-OS-X/">Remote SSH Login Without a Password From OS X</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
 
-<time class='entry-date' datetime='2014-10-07T18:56:53+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:56 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There are several ways to connect from OS X via ssh to remote server with no need to specify a password each time.</p>
-
-<p>This article from <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2" title="DigitalOcean - How to set up ssh keys">DigitalOcean</a> covers how to generate ssh public key and copy it to a server.
-One of the ways is to copy a new key by using <a href="https://github.com/beautifulcode/ssh-copy-id-for-OSX">ssh-copy-id</a> tool. But MaсOS does not shipped with it.</p>
-
-<p>You can install it manually</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo curl https://raw.github.com/beautifulcode/ssh-copy-id-for-OSX/master/ssh-copy-id.sh -o /usr/local/bin/ssh-copy-id 
-</span><span class='line'>sudo chmod +x /usr/local/bin/ssh-copy-id</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or use <a href="https://www.macports.org/">Macports</a> tool</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo port install openssh +ssh_copy_id</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you followed instruction and your public ssh key was copied to the server, check this file.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>~/ssh/authorized_key</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It should not be empty.</p>
-
-<p>Then try to connect to server.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time class='entry-date' datetime='2014-10-09T08:13:51+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:13 am</span></time>
       
-  <header>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2014-10-02-notebook-cooler-deepcool-n11/">Notebook Cooler DeepCool N11</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-10-02T12:47:22+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2014</span></span> <span class='time'>12:47 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Several months ago I have purchased a notebook cooler.</p>
-
-<p>It is a really cool stand for the laptop. It has no any wires, fans, etc. It is a firm, thin, metal thing. Very handy.</p>
-
-<p>I have only one wish - I could be a bit lighter.</p>
-
-<p>Here are some photos:</p>
-
-<p><img src="/images/posts/notebook_cooler/IMG_6938.JPG" alt="side view" />
-<img src="/images/posts/notebook_cooler/IMG_6937.JPG" alt="top view" />
-<img src="/images/posts/notebook_cooler/IMG_6935.JPG" alt="side view with laptop" />
-<img src="/images/posts/notebook_cooler/IMG_6934.JPG" alt="top view with laptop" /></p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://max-borisov.github.io/blog/2014-10-09-sass-in-your-projects/" data-via="" data-counturl="http://max-borisov.github.io/blog/2014-10-09-sass-in-your-projects/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014-10-07-automatically-run-commands-after-ssh-login/" title="Previous Post: Automatically run commands after ssh login">&laquo; Automatically run commands after ssh login</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014-10-16-default-host-for-apache-web-server/" title="Next Post: Default host for Apache web server on Ubuntu">Default host for Apache web server on Ubuntu &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -434,6 +280,7 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
 
   
 </aside>
+
 
     </div>
   </div>

@@ -4,7 +4,7 @@
   <title><![CDATA[/Max Borisov | web developer/i]]></title>
   <link href="http://max-borisov.github.io/atom.xml" rel="self"/>
   <link href="http://max-borisov.github.io/"/>
-  <updated>2014-10-02T14:48:54+03:00</updated>
+  <updated>2014-10-16T09:59:37+03:00</updated>
   <id>http://max-borisov.github.io/</id>
   <author>
     <name><![CDATA[Max Borisov]]></name>
@@ -14,10 +14,174 @@
 
   
   <entry>
-    <title type="html"><![CDATA[I Recommend DeepCool N11 Notebook Cooler]]></title>
-    <link href="http://max-borisov.github.io/blog/2014-10-02-i-recommend-deepcool-n11-notebook-cooler/"/>
+    <title type="html"><![CDATA[Default Host for Apache Web Server on Ubuntu]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-10-16-default-host-for-apache-web-server/"/>
+    <updated>2014-10-16T09:14:44+03:00</updated>
+    <id>http://max-borisov.github.io/blog/default-host-for-apache-web-server</id>
+    <content type="html"><![CDATA[<p>Here is how you can set a default host:</p>
+
+<ol>
+<li>Go to <strong>/etc/apache2/sites-available</strong>.</li>
+<li>Find a <strong>default.conf</strong> file.</li>
+<li>Inside <strong>VirtualHost</strong> directive put the line <strong>DocumentRoot /var/www/yoursite.com</strong></li>
+<li>Restart apache - <strong>/etc/init.d/apache restart</strong></li>
+</ol>
+
+
+<p>Use IP address or yoursite.com domain to access your server.
+Code tested on <strong>Ubuntu 13.10</strong>.</p>
+
+<p>Here the <strong>conf</strong> file is located
+<img src="http://max-borisov.github.io/images/posts/apache-default-host/img_2.png" alt="" />
+<img src="http://max-borisov.github.io/images/posts/apache-default-host/img_1.png" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sass in Your Projects]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-10-09-sass-in-your-projects/"/>
+    <updated>2014-10-09T08:13:51+03:00</updated>
+    <id>http://max-borisov.github.io/blog/sass-in-your-projects</id>
+    <content type="html"><![CDATA[<p>The other day I have open for myself a <a href="http://sass-lang.com/">Sass</a> tool. I knew about it, but there was no a good reason to start using it. Until this time.</p>
+
+<p>I have a project where we use a bunch of css files. I don&rsquo;t spend much creating css code, I update and maintain it instead. It wasn`t a problem but I started to think how to make this process more friendly. And <a href="http://sass-lang.com/">Sass</a> appeared on the stage. It provides many features to make css development easier such as: <strong>variables</strong>, <strong>nesting</strong> and  <strong>partials</strong>.</p>
+
+<p>A short example: I have defined several variables and then imported partial files where those variables are used. This file is called <strong>application.scss</strong>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$images-dir: '../images';
+</span><span class='line'>$fonts-dir: '../fonts';
+</span><span class='line'>$PIE-file: '/frontend/css/PIE.htc';
+</span><span class='line'>
+</span><span class='line'>@import "../base/all";
+</span><span class='line'>@import "../base/up";</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A frontend directory structure:</p>
+
+<p><img src="http://max-borisov.github.io/images/posts/sass_yii/sass-yii.png" alt="sass-yii" /></p>
+
+<h3>How to install Sass.</h3>
+
+<p>Here is a <a href="http://sass-lang.com/install" title="Install Sass">tutorial</a> how it can be done.</p>
+
+<p>If everything was done correct this code(in terminal) will show a <strong>sass</strong> version.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sass -v</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In my particular case I have already had a project with complete css styles. To start to write css in a new way I had to reformate it before(make a sass compatible).
+If you have instaled <strong>sass</strong>, it means you also have a tool <strong>sass-convert</strong> which helps you convert existing css files to scss format.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sass-convert -F css -T scss frontend/existing_css frontend/scss</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This command converts all css files to scss format. After that you can refactor them, if you want, and use a new syntax to create rules.</p>
+
+<p>This command will convert all scss to css.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sass --style compact --no-cache --update frontend/scss:frontend/css</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are several ways how to convert your scss to css.</p>
+
+<h5>Manually update using terminal</h5>
+
+<p>How to make it was shown above.</p>
+
+<h5>Use File watchers. For those who uses PHPStorm</h5>
+
+<p><img src="http://max-borisov.github.io/images/posts/sass_yii/phpstorm-file-watcher.png" alt="phpstorm-file-watcher" /></p>
+
+<h5>Convert files on the fly each time a page was requested</h5>
+
+<p>In <strong>PHP</strong> there is a function called <a href="http://php.net/manual/en/function.exec.php">exec()</a> which can be used to run system commands. In my particular case a project is built upon <a href="http://yiiframework.com">Yii framework</a>.
+In configuration file <strong>main.php</strong> I put the following code:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>'onBeginRequest' =&gt; function($event) {      
+</span><span class='line'>        if (YII_DEBUG) {
+</span><span class='line'>          exec('sass --style compact --no-cache --update frontend/scss:frontend/css', $resp);
+</span><span class='line'>        }
+</span><span class='line'>    },</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Automatically Run Commands After Ssh Login]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-10-07-automatically-run-commands-after-ssh-login/"/>
+    <updated>2014-10-07T20:28:40+03:00</updated>
+    <id>http://max-borisov.github.io/blog/automatically-run-commands-after-ssh-login</id>
+    <content type="html"><![CDATA[<p>On your Linux server put the code in ~/.bashrc or /etc/bash.bashrc to to run commands for all users:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if [[ -n $SSH_CONNECTION ]] ; then
+</span><span class='line'>    echo "I'm logged in!"
+</span><span class='line'>    # put commands here 
+</span><span class='line'>fi</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Remote SSH Login Without a Password From OS X]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-10-07-Remote-SSH-login-without-a-password-from-OS-X/"/>
+    <updated>2014-10-07T18:56:53+03:00</updated>
+    <id>http://max-borisov.github.io/blog/Remote-SSH-login-without-a-password-from-OS-X</id>
+    <content type="html"><![CDATA[<p>There are several ways to connect from OS X via ssh to remote server with no need to specify a password each time.</p>
+
+<p>This article from <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2" title="DigitalOcean - How to set up ssh keys">DigitalOcean</a> covers how to generate ssh public key and copy it to a server.
+One of the ways is to copy a new key by using <a href="https://github.com/beautifulcode/ssh-copy-id-for-OSX">ssh-copy-id</a> tool. But MaсOS does not shipped with it.</p>
+
+<p>You can install it manually</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo curl https://raw.github.com/beautifulcode/ssh-copy-id-for-OSX/master/ssh-copy-id.sh -o /usr/local/bin/ssh-copy-id 
+</span><span class='line'>sudo chmod +x /usr/local/bin/ssh-copy-id</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or use <a href="https://www.macports.org/">Macports</a> tool</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo port install openssh +ssh_copy_id</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you followed instruction and your public ssh key was copied to the server, check this file.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~/ssh/authorized_key</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It should not be empty.</p>
+
+<p>Then try to connect to server.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Notebook Cooler DeepCool N11]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-10-02-notebook-cooler-deepcool-n11/"/>
     <updated>2014-10-02T12:47:22+03:00</updated>
-    <id>http://max-borisov.github.io/blog/i-recommend-deepcool-n11-notebook-cooler</id>
+    <id>http://max-borisov.github.io/blog/notebook-cooler-deepcool-n11</id>
     <content type="html"><![CDATA[<p>Several months ago I have purchased a notebook cooler.</p>
 
 <p>It is a really cool stand for the laptop. It has no any wires, fans, etc. It is a firm, thin, metal thing. Very handy.</p>

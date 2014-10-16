@@ -3,7 +3,39 @@
   
   
   <url>
-    <loc>http://max-borisov.github.io/blog/2014-10-02-i-recommend-deepcool-n11-notebook-cooler/</loc>
+    <loc>http://max-borisov.github.io/blog/2014-10-16-default-host-for-apache-web-server/</loc>
+    
+    <lastmod>2014-10-16T09:14:44+03:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://max-borisov.github.io/blog/2014-10-09-sass-in-your-projects/</loc>
+    
+    <lastmod>2014-10-09T08:13:51+03:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://max-borisov.github.io/blog/2014-10-07-automatically-run-commands-after-ssh-login/</loc>
+    
+    <lastmod>2014-10-07T20:28:40+03:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://max-borisov.github.io/blog/2014-10-07-Remote-SSH-login-without-a-password-from-OS-X/</loc>
+    
+    <lastmod>2014-10-07T18:56:53+03:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://max-borisov.github.io/blog/2014-10-02-notebook-cooler-deepcool-n11/</loc>
     
     <lastmod>2014-10-02T12:47:22+03:00</lastmod>
     
@@ -13,14 +45,14 @@
   
   <url>
     <loc>http://max-borisov.github.io/blog/archives/</loc>
-    <lastmod>2014-10-02T14:48:54+03:00</lastmod>
+    <lastmod>2014-10-16T09:59:37+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://max-borisov.github.io/</loc>
-    <lastmod>2014-10-02T14:48:54+03:00</lastmod>
+    <lastmod>2014-10-16T09:59:37+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
