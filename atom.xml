@@ -4,7 +4,7 @@
   <title><![CDATA[/Max Borisov | web developer/i]]></title>
   <link href="http://max-borisov.github.io/atom.xml" rel="self"/>
   <link href="http://max-borisov.github.io/"/>
-  <updated>2014-10-16T09:59:37+03:00</updated>
+  <updated>2014-10-16T10:06:18+03:00</updated>
   <id>http://max-borisov.github.io/</id>
   <author>
     <name><![CDATA[Max Borisov]]></name>
@@ -31,8 +31,9 @@
 <p>Use IP address or yoursite.com domain to access your server.
 Code tested on <strong>Ubuntu 13.10</strong>.</p>
 
-<p>Here the <strong>conf</strong> file is located
-<img src="http://max-borisov.github.io/images/posts/apache-default-host/img_2.png" alt="" />
+<p>Where the <strong>conf</strong> file is located and how it should be modified.</p>
+
+<p><img src="http://max-borisov.github.io/images/posts/apache-default-host/img_2.png" alt="" />
 <img src="http://max-borisov.github.io/images/posts/apache-default-host/img_1.png" alt="" /></p>
 ]]></content>
   </entry>
