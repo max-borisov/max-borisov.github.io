@@ -9,8 +9,14 @@
   <meta name="author" content="Max Borisov">
 
   
-  <meta name="description" content="If you want to compare files you can use a FileMerge application. Or you can run this tool from the command line 1
-opendiff file_1.txt file_2.txt ">
+  <meta name="description" content="I used to type full git commands in console.
+But there is a way to make short forms by using git aliases.
+Like this: 1
+2
+3
+4
+5
+git config --global &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +84,140 @@ opendiff file_1.txt file_2.txt ">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014-11-13-aliases-for-git-commands/">Aliases for Git Commands.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-11-13T23:09:27+02:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:09 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I used to type full git commands in console.
+But there is a way to make short forms by using git aliases.
+Like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git config --global alias.ci commit
+</span><span class='line'>git config --global alias.co checkout
+</span><span class='line'>git config --global alias.pl pull
+</span><span class='line'>git config --global alias.ph push
+</span><span class='line'>git config --global alias.mr merge</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And use them like that:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git ci
+</span><span class='line'>git co
+</span><span class='line'>git mr</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014-11-13-how-to-make-commands-aliases-on-unix-based-systems/">How to Make Commands Aliases on Unix Based Systems.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-11-13T22:42:26+02:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:42 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Unix based systems can make your life easier allowing you to create aliases for commands/operations you run often.</p>
+
+<p>Just open your profile file with any text editor.</p>
+
+<p>On MacOS</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano ~/.profile</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or Linux</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano ~/.bashrc</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and add your own alias like in examples below.</p>
+
+<p>Here is some examples I use for myself:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias ls="ls -la"
+</span><span class='line'>alias octo="cd path_toproject_folder && pwd"
+</span><span class='line'># reload profile
+</span><span class='line'>alias rl="source ~/.profile"
+</span><span class='line'># restart Apache server
+</span><span class='line'>alias apa="sudo apachectl restart"
+</span><span class='line'>alias gb="git branch"
+</span><span class='line'>alias sts="git status"
+</span><span class='line'># ssh connect to remote server
+</span><span class='line'>alias vds="ssh root@10.11.12.13"
+</span><span class='line'># Start Selenium server
+</span><span class='line'>alias selenium="java -jar selenium-server-standalone-2.43.0.jar -browserSessionReuse"
+</span><span class='line'>alias r:s="rails server"
+</span><span class='line'>alias r:g="rails generate"
+</span><span class='line'>alias r:g:c="rails generate controller"
+</span><span class='line'>alias r:g:s="rails generate scaffold"</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -451,6 +591,14 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014-11-13-aliases-for-git-commands/">Aliases for Git Commands.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014-11-13-how-to-make-commands-aliases-on-unix-based-systems/">How to Make Commands Aliases on Unix Based Systems.</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014-10-20-how-to-compare-files-on-mac-osx/">How to Compare Files on Mac OSX</a>
       </li>
     
@@ -460,14 +608,6 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
     
       <li class="post">
         <a href="/blog/2014-10-16-default-host-for-apache-web-server/">Default Host for Apache Web Server on Ubuntu</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014-10-09-sass-in-your-projects/">Sass in Your Projects</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014-10-07-automatically-run-commands-after-ssh-login/">Automatically Run Commands After Ssh Login</a>
       </li>
     
   </ul>

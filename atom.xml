@@ -4,7 +4,7 @@
   <title><![CDATA[/Max Borisov | web developer/i]]></title>
   <link href="http://max-borisov.github.io/atom.xml" rel="self"/>
   <link href="http://max-borisov.github.io/"/>
-  <updated>2014-11-13T22:13:45+02:00</updated>
+  <updated>2014-11-13T23:18:00+02:00</updated>
   <id>http://max-borisov.github.io/</id>
   <author>
     <name><![CDATA[Max Borisov]]></name>
@@ -12,6 +12,100 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Aliases for Git Commands.]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-11-13-aliases-for-git-commands/"/>
+    <updated>2014-11-13T23:09:27+02:00</updated>
+    <id>http://max-borisov.github.io/blog/aliases-for-git-commands</id>
+    <content type="html"><![CDATA[<p>I used to type full git commands in console.
+But there is a way to make short forms by using git aliases.
+Like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git config --global alias.ci commit
+</span><span class='line'>git config --global alias.co checkout
+</span><span class='line'>git config --global alias.pl pull
+</span><span class='line'>git config --global alias.ph push
+</span><span class='line'>git config --global alias.mr merge</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And use them like that:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git ci
+</span><span class='line'>git co
+</span><span class='line'>git mr</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Make Commands Aliases on Unix Based Systems.]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-11-13-how-to-make-commands-aliases-on-unix-based-systems/"/>
+    <updated>2014-11-13T22:42:26+02:00</updated>
+    <id>http://max-borisov.github.io/blog/how-to-make-commands-aliases-on-unix-based-systems</id>
+    <content type="html"><![CDATA[<p>Unix based systems can make your life easier allowing you to create aliases for commands/operations you run often.</p>
+
+<p>Just open your profile file with any text editor.</p>
+
+<p>On MacOS</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano ~/.profile</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or Linux</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano ~/.bashrc</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and add your own alias like in examples below.</p>
+
+<p>Here is some examples I use for myself:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias ls="ls -la"
+</span><span class='line'>alias octo="cd path_toproject_folder && pwd"
+</span><span class='line'># reload profile
+</span><span class='line'>alias rl="source ~/.profile"
+</span><span class='line'># restart Apache server
+</span><span class='line'>alias apa="sudo apachectl restart"
+</span><span class='line'>alias gb="git branch"
+</span><span class='line'>alias sts="git status"
+</span><span class='line'># ssh connect to remote server
+</span><span class='line'>alias vds="ssh root@10.11.12.13"
+</span><span class='line'># Start Selenium server
+</span><span class='line'>alias selenium="java -jar selenium-server-standalone-2.43.0.jar -browserSessionReuse"
+</span><span class='line'>alias r:s="rails server"
+</span><span class='line'>alias r:g="rails generate"
+</span><span class='line'>alias r:g:c="rails generate controller"
+</span><span class='line'>alias r:g:s="rails generate scaffold"</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Compare Files on Mac OSX]]></title>
