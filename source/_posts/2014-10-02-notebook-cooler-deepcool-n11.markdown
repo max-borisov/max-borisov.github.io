@@ -13,7 +13,7 @@ I have only one wish - I could be a bit lighter.
 
 Here are some photos:
 
-![side view](/images/posts/notebook_cooler/IMG_6938.JPG)
-![top view](/images/posts/notebook_cooler/IMG_6937.JPG)
-![side view with laptop](/images/posts/notebook_cooler/IMG_6935.JPG)
-![top view with laptop](/images/posts/notebook_cooler/IMG_6934.JPG)
+![side view](/images/posts/notebook_cooler/38.jpg)
+![top view](/images/posts/notebook_cooler/37.jpg)
+![side view with laptop](/images/posts/notebook_cooler/35.jpg)
+![top view with laptop](/images/posts/notebook_cooler/34.jpg)
