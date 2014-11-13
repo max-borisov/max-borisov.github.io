@@ -9,9 +9,8 @@
   <meta name="author" content="Max Borisov">
 
   
-  <meta name="description" content="Here is how you can set a default host: Go to /etc/apache2/sites-available.
-Find a default.conf file.
-Inside VirtualHost directive put the line &hellip;">
+  <meta name="description" content="If you want to compare files you can use a FileMerge application. Or you can run this tool from the command line 1
+opendiff file_1.txt file_2.txt ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +78,80 @@ Inside VirtualHost directive put the line &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014-10-20-how-to-compare-files-on-mac-osx/">How to Compare Files on Mac OSX</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-20T21:42:56+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:42 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you want to compare files you can use a <strong>FileMerge</strong> application.</p>
+
+<p><img src="/images/posts/compare_files/screen.png" alt="" /></p>
+
+<p>Or you can run this tool from the command line</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>opendiff file_1.txt file_2.txt</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014-10-16-phpunit-func-tests-set-value-for-a-field/">How to Set Up a Form Input Value With PHPUnit Selenium2TestCase</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-16T15:26:54+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>3:26 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you use PHPUnit_Extensions_Selenium2TestCase for functional test and there is a need to update a specific value for, let&rsquo;s say, input text field, you need at first clear it and only after that set a new value.</p>
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$this-&gt;byCssSelector('#content form input[name="user"]')-&gt;clear();
+</span><span class='line'>$this-&gt;byCssSelector('#content form input[name="user"]')-&gt;value(10);</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -354,10 +427,10 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
 
 <p>Here are some photos:</p>
 
-<p><img src="/images/posts/notebook_cooler/IMG_6938.JPG" alt="side view" />
-<img src="/images/posts/notebook_cooler/IMG_6937.JPG" alt="top view" />
-<img src="/images/posts/notebook_cooler/IMG_6935.JPG" alt="side view with laptop" />
-<img src="/images/posts/notebook_cooler/IMG_6934.JPG" alt="top view with laptop" /></p>
+<p><img src="/images/posts/notebook_cooler/38.jpg" alt="side view" />
+<img src="/images/posts/notebook_cooler/37.jpg" alt="top view" />
+<img src="/images/posts/notebook_cooler/35.jpg" alt="side view with laptop" />
+<img src="/images/posts/notebook_cooler/34.jpg" alt="top view with laptop" /></p>
 </div>
   
   
@@ -378,6 +451,14 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014-10-20-how-to-compare-files-on-mac-osx/">How to Compare Files on Mac OSX</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014-10-16-phpunit-func-tests-set-value-for-a-field/">How to Set Up a Form Input Value With PHPUnit Selenium2TestCase</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014-10-16-default-host-for-apache-web-server/">Default Host for Apache Web Server on Ubuntu</a>
       </li>
     
@@ -387,14 +468,6 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
     
       <li class="post">
         <a href="/blog/2014-10-07-automatically-run-commands-after-ssh-login/">Automatically Run Commands After Ssh Login</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014-10-07-Remote-SSH-login-without-a-password-from-OS-X/">Remote SSH Login Without a Password From OS X</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014-10-02-notebook-cooler-deepcool-n11/">Notebook Cooler DeepCool N11</a>
       </li>
     
   </ul>

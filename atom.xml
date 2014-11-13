@@ -4,7 +4,7 @@
   <title><![CDATA[/Max Borisov | web developer/i]]></title>
   <link href="http://max-borisov.github.io/atom.xml" rel="self"/>
   <link href="http://max-borisov.github.io/"/>
-  <updated>2014-10-16T10:06:18+03:00</updated>
+  <updated>2014-11-13T22:13:45+02:00</updated>
   <id>http://max-borisov.github.io/</id>
   <author>
     <name><![CDATA[Max Borisov]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Compare Files on Mac OSX]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-10-20-how-to-compare-files-on-mac-osx/"/>
+    <updated>2014-10-20T21:42:56+03:00</updated>
+    <id>http://max-borisov.github.io/blog/how-to-compare-files-on-mac-osx</id>
+    <content type="html"><![CDATA[<p>If you want to compare files you can use a <strong>FileMerge</strong> application.</p>
+
+<p><img src="http://max-borisov.github.io/images/posts/compare_files/screen.png" alt="" /></p>
+
+<p>Or you can run this tool from the command line</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>opendiff file_1.txt file_2.txt</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Set Up a Form Input Value With PHPUnit Selenium2TestCase]]></title>
+    <link href="http://max-borisov.github.io/blog/2014-10-16-phpunit-func-tests-set-value-for-a-field/"/>
+    <updated>2014-10-16T15:26:54+03:00</updated>
+    <id>http://max-borisov.github.io/blog/phpunit-func-tests-set-value-for-a-field</id>
+    <content type="html"><![CDATA[<p>If you use PHPUnit_Extensions_Selenium2TestCase for functional test and there is a need to update a specific value for, let&rsquo;s say, input text field, you need at first clear it and only after that set a new value.</p>
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$this-&gt;byCssSelector('#content form input[name="user"]')-&gt;clear();
+</span><span class='line'>$this-&gt;byCssSelector('#content form input[name="user"]')-&gt;value(10);</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Default Host for Apache Web Server on Ubuntu]]></title>
@@ -191,10 +225,10 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
 
 <p>Here are some photos:</p>
 
-<p><img src="http://max-borisov.github.io/images/posts/notebook_cooler/IMG_6938.JPG" alt="side view" />
-<img src="http://max-borisov.github.io/images/posts/notebook_cooler/IMG_6937.JPG" alt="top view" />
-<img src="http://max-borisov.github.io/images/posts/notebook_cooler/IMG_6935.JPG" alt="side view with laptop" />
-<img src="http://max-borisov.github.io/images/posts/notebook_cooler/IMG_6934.JPG" alt="top view with laptop" /></p>
+<p><img src="http://max-borisov.github.io/images/posts/notebook_cooler/38.jpg" alt="side view" />
+<img src="http://max-borisov.github.io/images/posts/notebook_cooler/37.jpg" alt="top view" />
+<img src="http://max-borisov.github.io/images/posts/notebook_cooler/35.jpg" alt="side view with laptop" />
+<img src="http://max-borisov.github.io/images/posts/notebook_cooler/34.jpg" alt="top view with laptop" /></p>
 ]]></content>
   </entry>
   

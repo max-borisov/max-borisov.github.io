@@ -3,6 +3,22 @@
   
   
   <url>
+    <loc>http://max-borisov.github.io/blog/2014-10-20-how-to-compare-files-on-mac-osx/</loc>
+    
+    <lastmod>2014-10-20T21:42:56+03:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://max-borisov.github.io/blog/2014-10-16-phpunit-func-tests-set-value-for-a-field/</loc>
+    
+    <lastmod>2014-10-16T15:26:54+03:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://max-borisov.github.io/blog/2014-10-16-default-host-for-apache-web-server/</loc>
     
     <lastmod>2014-10-16T09:14:44+03:00</lastmod>
@@ -45,14 +61,14 @@
   
   <url>
     <loc>http://max-borisov.github.io/blog/archives/</loc>
-    <lastmod>2014-10-16T10:06:18+03:00</lastmod>
+    <lastmod>2014-11-13T22:13:45+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://max-borisov.github.io/</loc>
-    <lastmod>2014-10-16T10:06:18+03:00</lastmod>
+    <lastmod>2014-11-13T22:13:45+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
