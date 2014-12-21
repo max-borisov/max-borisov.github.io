@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Max Borisovx]]></title>
+  <title><![CDATA[Max Borisov]]></title>
   <link href="http://max-borisov.github.io/atom.xml" rel="self"/>
   <link href="http://max-borisov.github.io/"/>
-  <updated>2014-12-21T22:13:46+02:00</updated>
+  <updated>2014-12-21T22:14:58+02:00</updated>
   <id>http://max-borisov.github.io/</id>
   <author>
     <name><![CDATA[Max Borisov]]></name>
