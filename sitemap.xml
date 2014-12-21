@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>http://max-borisov.github.io/blog/2014-12-21-how-to-make-a-custom-asset-files-for-javascript-slash-css-files-in-yii2/</loc>
+    
+    <lastmod>2014-12-21T18:20:18+02:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://max-borisov.github.io/blog/2014-11-13-aliases-for-git-commands/</loc>
     
     <lastmod>2014-11-13T23:09:27+02:00</lastmod>
@@ -77,14 +85,14 @@
   
   <url>
     <loc>http://max-borisov.github.io/blog/archives/</loc>
-    <lastmod>2014-11-13T23:18:00+02:00</lastmod>
+    <lastmod>2014-12-21T22:09:21+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://max-borisov.github.io/</loc>
-    <lastmod>2014-11-13T23:18:00+02:00</lastmod>
+    <lastmod>2014-12-21T22:09:21+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

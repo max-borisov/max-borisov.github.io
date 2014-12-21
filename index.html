@@ -5,18 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>/Max Borisov | web developer/i</title>
+  <title>Max Borisovx</title>
   <meta name="author" content="Max Borisov">
 
   
-  <meta name="description" content="I used to type full git commands in console.
-But there is a way to make short forms by using git aliases.
-Like this: 1
-2
-3
-4
-5
-git config --global &hellip;">
+  <meta name="description" content="For example, we have a such task: use any javascript library to make image gallery. And the site is running Yii 2 framework.
+It may seems too easy: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -28,7 +22,7 @@ git config --global &hellip;">
   <link rel="canonical" href="http://max-borisov.github.io">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="/Max Borisov | web developer/i" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Max Borisovx" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -55,9 +49,9 @@ git config --global &hellip;">
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">/Max Borisov | web developer/i</a></h1>
+  <h1><a href="/">Max Borisovx</a></h1>
   
-    <h2>Web dev notes.</h2>
+    <h2>Like PHP, .</h2>
   
 </hgroup>
 
@@ -84,6 +78,170 @@ git config --global &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014-12-21-how-to-make-a-custom-asset-files-for-javascript-slash-css-files-in-yii2/">How to Make a Custom Asset Files for Javascript/css Files in Yii2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-21T18:20:18+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>6:20 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For example, we have a such task: use any javascript library to make image gallery. And the site is running <a href="http://www.yiiframework.com/">Yii 2 framework</a>.
+It may seems too easy: just find any suitable jquery plugin and include it. But there is another, more beatuful, way how to accomplish it.</p>
+
+<p>We can use a <a href="http://bower.io/">bower</a> (a package manager for client side) to install and manage plugins we need. But Yii 2 comes with composer which will help us. We will edit config file and specify what bower packages do we need and they will be installed.</p>
+
+<p>What we need to do:</p>
+
+<ol>
+<li>Install new bower package</li>
+<li>Make Asset to manage and include new files</li>
+<li>Use Asset in the application</li>
+</ol>
+
+
+<h4>Install bower packages</h4>
+
+<p>I have decided to use <a href="http://ashleydw.github.io/lightbox">ekko-lightbox</a>. On the <a href="http://bower.io/search/">search page</a> we can check if that plugin is available for the bower. And it is.</p>
+
+<p>So we need to update <strong>require</strong> section of <strong>composer.json</strong> file and set a plugin name.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"require": {
+</span><span class='line'>        "php": "&gt;=5.4.0",
+</span><span class='line'>        "yiisoft/yii2": "*",
+</span><span class='line'>        "yiisoft/yii2-bootstrap": "*",
+</span><span class='line'>        "yiisoft/yii2-imagine": "*",
+</span><span class='line'>        "yiisoft/yii2-codeception": "*",
+</span><span class='line'>        "bower-asset/ekko-lightbox": "*"
+</span><span class='line'>    },</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then run command</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>composer install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After that check the <strong>vendor/bower</strong> directory.</p>
+
+<p><img src="/images/posts/yii2-assets/bower.png" alt="vendor-bower directory" /></p>
+
+<p>From now we can include javascript/css files using <strong>$this->registerJs()</strong> method in any view file.</p>
+
+<p>But we are going to use <a href="http://www.yiiframework.com/doc-2.0/guide-structure-assets.html">assets</a>.</p>
+
+<p>To make a new one create a file called <strong>LightBoxAsset.php</strong> under assets directory. And put the code below.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>namespace app\assets;
+</span><span class='line'>
+</span><span class='line'>use yii\web\AssetBundle;
+</span><span class='line'>
+</span><span class='line'>class LightBoxAsset extends AssetBundle
+</span><span class='line'>{
+</span><span class='line'>    public $sourcePath = '@bower/ekko-lightbox';
+</span><span class='line'>    public $baseUrl = '@web';
+</span><span class='line'>    public $css = [
+</span><span class='line'>        'dist/ekko-lightbox.min.css',
+</span><span class='line'>    ];
+</span><span class='line'>    public $js = [
+</span><span class='line'>        'dist/ekko-lightbox.min.js',
+</span><span class='line'>   </span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>@bower</strong> alias represents a path to the vendor/bower directory.
+We use $css ans $js properties to specify what files should be included.</p>
+
+<p>Then we update application main asset file <strong>AppAsset.php</strong> and make it dependes on the asset we just created.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>namespace app\assets;
+</span><span class='line'>
+</span><span class='line'>use yii\web\AssetBundle;
+</span><span class='line'>
+</span><span class='line'>class AppAsset extends AssetBundle
+</span><span class='line'>{
+</span><span class='line'>    public $basePath = '@webroot';
+</span><span class='line'>    public $baseUrl = '@web';
+</span><span class='line'>    public $css = [
+</span><span class='line'>        'css/site.css',
+</span><span class='line'>    ];
+</span><span class='line'>    public $js = [
+</span><span class='line'>    ];
+</span><span class='line'>    public $depends = [
+</span><span class='line'>        'yii\web\YiiAsset',
+</span><span class='line'>        'yii\bootstrap\BootstrapAsset',
+</span><span class='line'>        '\app\assets\LightBoxAsset',
+</span><span class='line'>    ];
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>AppAsset can be loaded like this</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>AppAsset::register($this);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After that a new javascript and css files will be appear in the source code of the page.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -591,6 +749,10 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014-12-21-how-to-make-a-custom-asset-files-for-javascript-slash-css-files-in-yii2/">How to Make a Custom Asset Files for Javascript/css Files in Yii2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014-11-13-aliases-for-git-commands/">Aliases for Git Commands.</a>
       </li>
     
@@ -604,10 +766,6 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
     
       <li class="post">
         <a href="/blog/2014-10-16-phpunit-func-tests-set-value-for-a-field/">How to Set Up a Form Input Value With PHPUnit Selenium2TestCase</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014-10-16-default-host-for-apache-web-server/">Default Host for Apache Web Server on Ubuntu</a>
       </li>
     
   </ul>
