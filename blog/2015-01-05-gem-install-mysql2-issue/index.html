@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Sass in Your Projects - Max Borisov</title>
+  <title>Gem Install Mysql2 Issue - Max Borisov</title>
   <meta name="author" content="Max Borisov">
 
   
-  <meta name="description" content="The other day I have open for myself a Sass tool. I knew about it, but there was no a good reason to start using it. Until this time. I have a &hellip;">
+  <meta name="description" content="I tried to create a new Rails app with mysql2 database adapter on MacOS.
+But bundle install failed with an error: 1
+2
+ERROR: Error installing mysql2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://max-borisov.github.io/blog/2014-10-09-sass-in-your-projects">
+  <link rel="canonical" href="http://max-borisov.github.io/blog/2015-01-05-gem-install-mysql2-issue">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Max Borisov" type="application/atom+xml">
@@ -80,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">Sass in Your Projects</h1>
+      <h1 class="entry-title">Gem Install Mysql2 Issue</h1>
     
     
       <p class="meta">
@@ -89,90 +92,58 @@
 
 
 
-<time class='entry-date' datetime='2014-10-09T08:13:51+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:13 am</span></time>
+<time class='entry-date' datetime='2015-01-05T18:22:03+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:22 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>The other day I have open for myself a <a href="http://sass-lang.com/">Sass</a> tool. I knew about it, but there was no a good reason to start using it. Until this time.</p>
-
-<p>I have a project where we use a bunch of css files. I don&rsquo;t spend much creating css code, I update and maintain it instead. It wasn`t a problem but I started to think how to make this process more friendly. And <a href="http://sass-lang.com/">Sass</a> appeared on the stage. It provides many features to make css development easier such as: <strong>variables</strong>, <strong>nesting</strong> and  <strong>partials</strong>.</p>
-
-<p>A short example: I have defined several variables and then imported partial files where those variables are used. This file is called <strong>application.scss</strong>.</p>
+<div class="entry-content"><p>I tried to create a new Rails app with mysql2 database adapter on MacOS.
+But <strong>bundle install</strong> failed with an error:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$images-dir: '../images';
-</span><span class='line'>$fonts-dir: '../fonts';
-</span><span class='line'>$PIE-file: '/frontend/css/PIE.htc';
-</span><span class='line'>
-</span><span class='line'>@import "../base/all";
-</span><span class='line'>@import "../base/up";</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Error installing mysql2:
+</span><span class='line'>ERROR: Failed to build gem native extension</span></code></pre></td></tr></table></div></figure>
 
 
-<p>A frontend directory structure:</p>
+<p>These actions helped me to solve the problem.</p>
 
-<p><img src="/images/posts/sass_yii/sass-yii.png" alt="sass-yii" /></p>
+<ul>
+<li>Install mysql using <a href="http://http://brew.sh/">brew</a> package manager.</li>
+</ul>
 
-<h3>How to install Sass.</h3>
-
-<p>Here is a <a href="http://sass-lang.com/install" title="Install Sass">tutorial</a> how it can be done.</p>
-
-<p>If everything was done correct this code(in terminal) will show a <strong>sass</strong> version.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sass -v</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install mysql</span></code></pre></td></tr></table></div></figure>
 
 
-<p>In my particular case I have already had a project with complete css styles. To start to write css in a new way I had to reformate it before(make a sass compatible).
-If you have instaled <strong>sass</strong>, it means you also have a tool <strong>sass-convert</strong> which helps you convert existing css files to scss format.</p>
+<ul>
+<li>Run this command to ensure the mysql has been installed.</li>
+</ul>
+
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sass-convert -F css -T scss frontend/existing_css frontend/scss</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew list</span></code></pre></td></tr></table></div></figure>
 
 
-<p>This command converts all css files to scss format. After that you can refactor them, if you want, and use a new syntax to create rules.</p>
-
-<p>This command will convert all scss to css.</p>
+<p>This command returns information about package and installation directory.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sass --style compact --no-cache --update frontend/scss:frontend/css</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew info mysql</span></code></pre></td></tr></table></div></figure>
 
 
-<p>There are several ways how to convert your scss to css.</p>
+<p>In my case it was <strong>/usr/local/opt/mysql/</strong>.</p>
 
-<h5>Manually update using terminal</h5>
+<ul>
+<li>Run the command and set path to the mysql config file.</li>
+</ul>
 
-<p>How to make it was shown above.</p>
-
-<h5>Use File watchers. For those who uses PHPStorm</h5>
-
-<p><img src="/images/posts/sass_yii/phpstorm-file-watcher.png" alt="phpstorm-file-watcher" /></p>
-
-<h5>Convert files on the fly each time a page was requested</h5>
-
-<p>In <strong>PHP</strong> there is a function called <a href="http://php.net/manual/en/function.exec.php">exec()</a> which can be used to run system commands. In my particular case a project is built upon <a href="http://yiiframework.com">Yii framework</a>.
-In configuration file <strong>main.php</strong> I put the following code:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>'onBeginRequest' =&gt; function($event) {      
-</span><span class='line'>        if (YII_DEBUG) {
-</span><span class='line'>          exec('sass --style compact --no-cache --update frontend/scss:frontend/css', $resp);
-</span><span class='line'>        }
-</span><span class='line'>    },</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install mysql2 -- --with-mysql-config=/usr/local/opt/mysql/bin/mysql_config</span></code></pre></td></tr></table></div></figure>
 
-
-<p></p>
 </div>
 
 
@@ -188,7 +159,7 @@ In configuration file <strong>main.php</strong> I put the following code:</p>
 
 
 
-<time class='entry-date' datetime='2014-10-09T08:13:51+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:13 am</span></time>
+<time class='entry-date' datetime='2015-01-05T18:22:03+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:22 pm</span></time>
       
 
 
@@ -196,7 +167,7 @@ In configuration file <strong>main.php</strong> I put the following code:</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://max-borisov.github.io/blog/2014-10-09-sass-in-your-projects/" data-via="" data-counturl="http://max-borisov.github.io/blog/2014-10-09-sass-in-your-projects/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://max-borisov.github.io/blog/2015-01-05-gem-install-mysql2-issue/" data-via="" data-counturl="http://max-borisov.github.io/blog/2015-01-05-gem-install-mysql2-issue/" >Tweet</a>
   
   
   
@@ -205,10 +176,8 @@ In configuration file <strong>main.php</strong> I put the following code:</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014-10-07-automatically-run-commands-after-ssh-login/" title="Previous Post: Automatically run commands after ssh login">&laquo; Automatically run commands after ssh login</a>
+        <a class="basic-alignment left" href="/blog/2014-12-21-how-to-make-a-custom-asset-files-for-javascript-slash-css-files-in-yii2/" title="Previous Post: How to make a custom Asset files for javascript/css files in Yii2">&laquo; How to make a custom Asset files for javascript/css files in Yii2</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014-10-16-default-host-for-apache-web-server/" title="Next Post: Default host for Apache web server on Ubuntu">Default host for Apache web server on Ubuntu &raquo;</a>
       
     </p>
   </footer>

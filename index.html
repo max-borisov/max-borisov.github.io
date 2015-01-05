@@ -9,8 +9,10 @@
   <meta name="author" content="Max Borisov">
 
   
-  <meta name="description" content="For example, we have a such task: use any javascript library to make image gallery. And the site is running Yii 2 framework.
-It may seems too easy: &hellip;">
+  <meta name="description" content="I tried to create a new Rails app with mysql2 database adapter on MacOS.
+But bundle install failed with an error: 1
+2
+ERROR: Error installing mysql2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +80,79 @@ It may seems too easy: &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015-01-05-gem-install-mysql2-issue/">Gem Install Mysql2 Issue</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-05T18:22:03+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:22 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I tried to create a new Rails app with mysql2 database adapter on MacOS.
+But <strong>bundle install</strong> failed with an error:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Error installing mysql2:
+</span><span class='line'>ERROR: Failed to build gem native extension</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These actions helped me to solve the problem.</p>
+
+<ul>
+<li>Install mysql using <a href="http://http://brew.sh/">brew</a> package manager.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install mysql</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Run this command to ensure the mysql has been installed.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew list</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This command returns information about package and installation directory.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew info mysql</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In my case it was <strong>/usr/local/opt/mysql/</strong>.</p>
+
+<ul>
+<li>Run the command and set path to the mysql config file.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install mysql2 -- --with-mysql-config=/usr/local/opt/mysql/bin/mysql_config</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -696,47 +771,9 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014-10-02-notebook-cooler-deepcool-n11/">Notebook Cooler DeepCool N11</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-10-02T12:47:22+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2014</span></span> <span class='time'>12:47 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Several months ago I have purchased a notebook cooler.</p>
-
-<p>It is a really cool stand for the laptop. It has no any wires, fans, etc. It is a firm, thin, metal thing. Very handy.</p>
-
-<p>I have only one wish - I could be a bit lighter.</p>
-
-<p>Here are some photos:</p>
-
-<p><img src="/images/posts/notebook_cooler/38.jpg" alt="side view" />
-<img src="/images/posts/notebook_cooler/37.jpg" alt="top view" />
-<img src="/images/posts/notebook_cooler/35.jpg" alt="side view with laptop" />
-<img src="/images/posts/notebook_cooler/34.jpg" alt="top view with laptop" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -747,6 +784,10 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015-01-05-gem-install-mysql2-issue/">Gem Install Mysql2 Issue</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014-12-21-how-to-make-a-custom-asset-files-for-javascript-slash-css-files-in-yii2/">How to Make a Custom Asset Files for Javascript/css Files in Yii2</a>
@@ -762,10 +803,6 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
     
       <li class="post">
         <a href="/blog/2014-10-20-how-to-compare-files-on-mac-osx/">How to Compare Files on Mac OSX</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014-10-16-phpunit-func-tests-set-value-for-a-field/">How to Set Up a Form Input Value With PHPUnit Selenium2TestCase</a>
       </li>
     
   </ul>
@@ -810,7 +847,7 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Max Borisov -
+  Copyright &copy; 2015 - Max Borisov -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Max Borisov]]></title>
   <link href="http://max-borisov.github.io/atom.xml" rel="self"/>
   <link href="http://max-borisov.github.io/"/>
-  <updated>2014-12-21T22:14:58+02:00</updated>
+  <updated>2015-01-05T22:53:00+02:00</updated>
   <id>http://max-borisov.github.io/</id>
   <author>
     <name><![CDATA[Max Borisov]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Gem Install Mysql2 Issue]]></title>
+    <link href="http://max-borisov.github.io/blog/2015-01-05-gem-install-mysql2-issue/"/>
+    <updated>2015-01-05T18:22:03+02:00</updated>
+    <id>http://max-borisov.github.io/blog/gem-install-mysql2-issue</id>
+    <content type="html"><![CDATA[<p>I tried to create a new Rails app with mysql2 database adapter on MacOS.
+But <strong>bundle install</strong> failed with an error:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Error installing mysql2:
+</span><span class='line'>ERROR: Failed to build gem native extension</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These actions helped me to solve the problem.</p>
+
+<ul>
+<li>Install mysql using <a href="http://http://brew.sh/">brew</a> package manager.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install mysql</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Run this command to ensure the mysql has been installed.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew list</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This command returns information about package and installation directory.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew info mysql</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In my case it was <strong>/usr/local/opt/mysql/</strong>.</p>
+
+<ul>
+<li>Run the command and set path to the mysql config file.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install mysql2 -- --with-mysql-config=/usr/local/opt/mysql/bin/mysql_config</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Make a Custom Asset Files for Javascript/css Files in Yii2]]></title>
