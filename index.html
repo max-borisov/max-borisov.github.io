@@ -9,10 +9,10 @@
   <meta name="author" content="Max Borisov">
 
   
-  <meta name="description" content="I tried to create a new Rails app with mysql2 database adapter on MacOS.
-But bundle install failed with an error: 1
+  <meta name="description" content="Recently I tried to install the nokogiri rails gem and got the error: 1
 2
-ERROR: Error installing mysql2 &hellip;">
+ERROR: Error installing nokogiri:
+ERROR: Failed to build gem native &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,67 @@ ERROR: Error installing mysql2 &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015-01-12-gem-nokogiri-install-error/">Gem Nokogiri Install Error</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-12T12:45:36+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:45 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently I tried  to install the nokogiri rails gem and got the error:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Error installing nokogiri:
+</span><span class='line'>ERROR: Failed to build gem native extension.</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>There also was a long text describing what is also was wrong. And I found another hint:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>libxml2 is missing. Please locate mkmf.log to investigate how it is failing.</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>So, what I did to solve this problem:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install libxml2 libxslt</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And run this command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NOKOGIRI_USE_SYSTEM_LIBRARIES=1 gem install nokogiri -- --use-system-libraries --with-iconv-dir=/usr/lib --with-xml2-config="$(brew --prefix libxml2)/bin/xml2-config" --with-xml2-include="$(brew --prefix libxml2)/include/libxml2" --with-xslt-config="$(brew --prefix libxslt)/bin/xslt-config"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After that I could install nokogiri.</p>
+
+<p>Here is also a <a href="http://www.nokogiri.org/tutorials/installing_nokogiri.html">tutorial how to install nokogiri.</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -715,62 +776,6 @@ In configuration file <strong>main.php</strong> I put the following code:</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014-10-07-Remote-SSH-login-without-a-password-from-OS-X/">Remote SSH Login Without a Password From OS X</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-10-07T18:56:53+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:56 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There are several ways to connect from OS X via ssh to remote server with no need to specify a password each time.</p>
-
-<p>This article from <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2" title="DigitalOcean - How to set up ssh keys">DigitalOcean</a> covers how to generate ssh public key and copy it to a server.
-One of the ways is to copy a new key by using <a href="https://github.com/beautifulcode/ssh-copy-id-for-OSX">ssh-copy-id</a> tool. But MaсOS does not shipped with it.</p>
-
-<p>You can install it manually</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo curl https://raw.github.com/beautifulcode/ssh-copy-id-for-OSX/master/ssh-copy-id.sh -o /usr/local/bin/ssh-copy-id 
-</span><span class='line'>sudo chmod +x /usr/local/bin/ssh-copy-id</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or use <a href="https://www.macports.org/">Macports</a> tool</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo port install openssh +ssh_copy_id</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you followed instruction and your public ssh key was copied to the server, check this file.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>~/ssh/authorized_key</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It should not be empty.</p>
-
-<p>Then try to connect to server.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -786,6 +791,10 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015-01-12-gem-nokogiri-install-error/">Gem Nokogiri Install Error</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015-01-05-gem-install-mysql2-issue/">Gem Install Mysql2 Issue</a>
       </li>
     
@@ -799,10 +808,6 @@ One of the ways is to copy a new key by using <a href="https://github.com/beauti
     
       <li class="post">
         <a href="/blog/2014-11-13-how-to-make-commands-aliases-on-unix-based-systems/">How to Make Commands Aliases on Unix Based Systems.</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014-10-20-how-to-compare-files-on-mac-osx/">How to Compare Files on Mac OSX</a>
       </li>
     
   </ul>
